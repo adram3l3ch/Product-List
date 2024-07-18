@@ -1,0 +1,15 @@
+export { default as baklava } from "./image-baklava-desktop.jpg";
+export { default as brownie } from "./image-brownie-desktop.jpg";
+export { default as cake } from "./image-cake-desktop.jpg";
+export { default as cremeBrulee } from "./image-creme-brulee-desktop.jpg";
+export { default as macaron } from "./image-macaron-desktop.jpg";
+export { default as meringue } from "./image-meringue-desktop.jpg";
+export { default as pannaCotta } from "./image-panna-cotta-desktop.jpg";
+export { default as tiramisu } from "./image-tiramisu-desktop.jpg";
+export { default as waffle } from "./image-waffle-desktop.jpg";
+export { default as addToCart } from "./icon-add-to-cart.svg";
+export { default as carbonNeutral } from "./icon-carbon-neutral.svg";
+export { default as decrement } from "./icon-decrement-quantity.svg";
+export { default as increment } from "./icon-increment-quantity.svg";
+export { default as tick } from "./icon-order-confirmed.svg";
+export { default as close } from "./icon-remove-item.svg";
