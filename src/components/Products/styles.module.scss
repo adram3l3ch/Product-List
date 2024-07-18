@@ -1,0 +1,17 @@
+@import "/src/styles/theme";
+
+.container {
+    display: grid;
+    gap: 2rem;
+
+    .title {
+        font-size: 2rem;
+        color: $primaryColor900;
+    }
+
+    .productList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
