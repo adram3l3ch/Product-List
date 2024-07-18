@@ -1,0 +1,66 @@
+@import "/src/styles/theme";
+
+.container {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    display: grid;
+    gap: 1.5rem;
+    align-content: flex-start;
+    height: max-content;
+    position: sticky;
+    top: 2rem;
+
+    .title {
+        color: $primaryColor600;
+        font-size: 1.5rem;
+    }
+
+    .productList {
+        display: grid;
+        gap: 1rem;
+        hr {
+            border: none;
+            height: 1px;
+            background-color: $primaryColor100;
+        }
+    }
+
+    .carbonFree {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: $primaryColor100;
+        padding: 1rem;
+        color: $primaryColor900;
+        border-radius: 0.5rem;
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    .priceDetails {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $primaryColor900;
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    .cta {
+        background-color: $primaryColor600;
+        color: $primaryColor100;
+        padding: 0.75rem 2rem;
+        border-radius: 100vh;
+        border: none;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}

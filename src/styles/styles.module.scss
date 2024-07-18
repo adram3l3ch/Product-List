@@ -1,0 +1,14 @@
+@import "./theme";
+
+.container {
+    padding: 2rem;
+    background-color: $primaryColor100;
+
+    .maxWidth {
+        max-width: 1500px;
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: 1fr 25rem;
+        gap: 2rem;
+    }
+}

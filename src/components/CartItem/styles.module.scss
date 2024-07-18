@@ -1,0 +1,42 @@
+@import "/src/styles/theme";
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .details {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .title {
+        color: $primaryColor900;
+        font-weight: 600;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: $primaryColor500;
+
+        .quantity {
+            font-weight: 600;
+            color: $primaryColor600;
+        }
+
+        .price {
+            font-weight: 600;
+        }
+    }
+
+    .clearButton {
+        border: 1px solid $primaryColor500;
+        border-radius: 50%;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
