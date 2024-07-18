@@ -1,0 +1,48 @@
+@import "/src/styles/theme";
+
+.container {
+    display: grid;
+    .image {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        object-fit: cover;
+        display: block;
+    }
+    .cartButton {
+        transform: translateY(-50%);
+        margin-inline: auto;
+        border-radius: 100vh;
+        border: 1px solid $primaryColor600;
+        padding: 0.5rem 2rem;
+        font-family: inherit;
+        font-weight: 600;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        &:hover {
+            color: $primaryColor600;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 1px 1px 15px -5px;
+        }
+    }
+    .category {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: $primaryColor500;
+    }
+    .name {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primaryColor900;
+        margin-block: 0.1rem;
+    }
+    .price {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $primaryColor600;
+    }
+}
