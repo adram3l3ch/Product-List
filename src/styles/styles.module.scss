@@ -9,6 +9,7 @@
 .container {
     padding: 1rem;
     background-color: $primaryColor100;
+    min-height: 100dvh;
     > h1 {
         display: none;
     }
@@ -34,6 +35,6 @@
         padding: 2rem;
     }
     @include responsive(md) {
-        padding: 5rem 2rem 0 2rem;
+        padding: 5rem 2rem 2rem;
     }
 }
