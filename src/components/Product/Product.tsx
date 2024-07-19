@@ -1,14 +1,14 @@
 import styles from "./styles.module.scss";
 import { ProductProps } from "./types";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addProductToCart, modifyProductQuantity } from "../../features";
 import { addToCart, decrement, increment } from "../../assets/images";
-import { RootState } from "../../store";
+import { useSelector } from "../../store";
 
 const Product = (props: ProductProps) => {
     const { product } = props;
     const { image, name, price, category, id } = product;
-    const { products } = useSelector((state: RootState) => state.cart);
+    const { products } = useSelector(state => state.cart);
 
     const dispatch = useDispatch();
 

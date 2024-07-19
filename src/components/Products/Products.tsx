@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
+import { useSelector } from "../../store";
 import { Product } from "../Product";
 import styles from "./styles.module.scss";
-import { RootState } from "../../store";
 
 const Products = () => {
-    const products = useSelector((state: RootState) => state.products);
+    const products = useSelector(state => state.products);
     return (
         <section className={styles.container}>
             <h1 className={styles.title}>Desserts</h1>

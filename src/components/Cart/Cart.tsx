@@ -1,11 +1,10 @@
-import { useSelector } from "react-redux";
 import { carbonNeutral, emptyCart as emptyCartImage } from "../../assets/images";
 import { CartItem } from "../CartItem";
 import styles from "./styles.module.scss";
-import { RootState } from "../../store";
+import { useSelector } from "../../store";
 
 const Cart = () => {
-    const { products, totalItems, totalPrice } = useSelector((state: RootState) => state.cart);
+    const { products, totalItems, totalPrice } = useSelector(state => state.cart);
 
     const cartDetails = (
         <>
