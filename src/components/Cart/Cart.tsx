@@ -2,18 +2,21 @@ import { carbonNeutral, emptyCart as emptyCartImage } from "../../assets/images"
 import { CartItem } from "../CartItem";
 import styles from "./styles.module.scss";
 import { useSelector } from "../../store";
+import { ConfirmationModal } from "../ConfirmationModal";
+import { Fragment, useState } from "react";
 
 const Cart = () => {
     const { products, totalItems, totalPrice } = useSelector(state => state.cart);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const cartDetails = (
         <>
             <div className={styles.productList}>
                 {products.map(p => (
-                    <>
+                    <Fragment key={p.id}>
                         <CartItem product={p} />
                         <hr />
-                    </>
+                    </Fragment>
                 ))}
             </div>
             <div className={styles.priceDetails}>
@@ -26,7 +29,9 @@ const Cart = () => {
                     This is a <strong>Carbon-neutral</strong> delivery
                 </p>
             </div>
-            <button className={styles.cta}>Confirm Order</button>
+            <button className={styles.cta} onClick={() => setIsModalOpen(true)}>
+                Confirm Order
+            </button>
         </>
     );
 
@@ -39,6 +44,7 @@ const Cart = () => {
 
     return (
         <section className={styles.container}>
+            <ConfirmationModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
             <h3 className={styles.title}>{`Your Cart (${totalItems})`}</h3>
             {totalItems ? cartDetails : emptyCart}
         </section>

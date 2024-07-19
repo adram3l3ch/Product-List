@@ -3,6 +3,7 @@
 .container {
     display: grid;
     &:hover .image img {
+        rotate: 3deg;
         scale: 1.05;
     }
     .image {
