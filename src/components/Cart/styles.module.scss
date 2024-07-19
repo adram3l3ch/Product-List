@@ -1,7 +1,7 @@
 @import "/src/styles/theme";
 
 .container {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     border-radius: 0.5rem;
     background-color: white;
     display: flex;
@@ -38,6 +38,7 @@
         padding: 1rem;
         color: $primaryColor900;
         border-radius: 0.5rem;
+        font-size: 0.9rem;
 
         strong {
             font-weight: 600;
@@ -79,4 +80,7 @@
     gap: 1rem;
     color: $primaryColor500;
     font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
 }

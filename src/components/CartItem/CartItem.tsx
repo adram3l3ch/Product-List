@@ -22,7 +22,7 @@ const CartItem = ({ product }: CartItemProps) => {
                 </div>
             </div>
             <button className={styles.clearButton} onClick={handleRemoveProductFromCart}>
-                <img src={close} />
+                <img src={close} alt="remove" />
             </button>
         </div>
     );

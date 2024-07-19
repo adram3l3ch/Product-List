@@ -25,21 +25,21 @@ const Product = (props: ProductProps) => {
     return (
         <section className={styles.container}>
             <div className={styles.image} style={{ borderColor: !productInCart ? "transparent" : undefined }}>
-                <img src={image} />
+                <img src={image} alt={name} />
             </div>
             {productInCart ? (
                 <div className={styles.modifyCartButton}>
                     <button onClick={() => handleModifyQuantity(-1)}>
-                        <img src={decrement} />
+                        <img src={decrement} alt="remove" />
                     </button>
                     <span>{productInCart.quantity}</span>
                     <button onClick={() => handleModifyQuantity(1)} disabled={productInCart.quantity >= 20}>
-                        <img src={increment} />
+                        <img src={increment} alt="add" />
                     </button>
                 </div>
             ) : (
                 <button className={styles.cartButton} onClick={handleAddProductToCart}>
-                    <img src={addToCart} />
+                    <img src={addToCart} alt="add to cart" />
                     Add to cart
                 </button>
             )}

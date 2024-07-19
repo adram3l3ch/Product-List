@@ -9,26 +9,31 @@
 .container {
     padding: 1rem;
     background-color: $primaryColor100;
+    > h1 {
+        display: none;
+    }
 
     .maxWidth {
-        max-width: 1500px;
+        max-width: 1220px;
         margin-inline: auto;
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
 
         @include responsive(lg) {
-            grid-template-columns: 1fr 25rem;
+            grid-template-columns: 1fr 24rem;
             .cart {
                 position: sticky;
-                top: 2rem;
-                bottom: 2rem;
-                max-height: calc(100dvh - 4rem);
+                top: 5rem;
+                max-height: calc(100dvh - 7rem);
             }
         }
     }
 
     @include responsive(xs) {
         padding: 2rem;
+    }
+    @include responsive(md) {
+        padding: 5rem 2rem 0 2rem;
     }
 }

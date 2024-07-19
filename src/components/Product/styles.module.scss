@@ -22,7 +22,7 @@
 
     @include responsive(lg) {
         .image {
-            aspect-ratio: 1;
+            aspect-ratio: 100/97;
         }
         &:hover .image img {
             rotate: 3deg;
@@ -83,7 +83,7 @@
     }
 
     .category {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: 400;
         color: $primaryColor500;
     }
@@ -94,7 +94,7 @@
         margin-block: 0.1rem;
     }
     .price {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
         color: $primaryColor600;
     }

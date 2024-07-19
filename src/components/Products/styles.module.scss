@@ -6,14 +6,14 @@
     gap: 2rem;
 
     .title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         color: $primaryColor900;
     }
 
     .productList {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2rem 1.5rem;
 
         @include responsive(sm) {
             grid-template-columns: repeat(2, 1fr);

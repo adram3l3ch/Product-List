@@ -24,7 +24,7 @@ const Cart = () => {
                 <div className={styles.price}>${totalPrice.toFixed(2)}</div>
             </div>
             <div className={styles.carbonFree}>
-                <img src={carbonNeutral} />
+                <img src={carbonNeutral} alt="carbon-neutral" />
                 <p>
                     This is a <strong>Carbon-neutral</strong> delivery
                 </p>
