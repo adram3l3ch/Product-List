@@ -1,14 +1,12 @@
 @import "/src/styles/theme";
+@import "/src/styles/responsive";
 
 .container {
     display: grid;
-    &:hover .image img {
-        rotate: 3deg;
-        scale: 1.05;
-    }
+
     .image {
         width: 100%;
-        aspect-ratio: 1;
+        aspect-ratio: 4/3;
         border-radius: 0.5rem;
         overflow: hidden;
         border: 2px solid $primaryColor600;
@@ -19,6 +17,16 @@
             object-fit: cover;
             display: block;
             transition: all 0.5s ease-in-out;
+        }
+    }
+
+    @include responsive(lg) {
+        .image {
+            aspect-ratio: 1;
+        }
+        &:hover .image img {
+            rotate: 3deg;
+            scale: 1.05;
         }
     }
     .cartButton {

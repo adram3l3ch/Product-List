@@ -8,10 +8,7 @@
     flex-direction: column;
     gap: 1.5rem;
     height: max-content;
-    position: sticky;
-    top: 2rem;
-    bottom: 2rem;
-    max-height: calc(100dvh - 4rem);
+    max-height: 100%;
 
     .title {
         color: $primaryColor600;

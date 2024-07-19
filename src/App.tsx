@@ -6,7 +6,9 @@ const App = () => {
         <main className={styles.container}>
             <div className={styles.maxWidth}>
                 <Products />
-                <Cart />
+                <div className={styles.cart}>
+                    <Cart />
+                </div>
             </div>
         </main>
     );
