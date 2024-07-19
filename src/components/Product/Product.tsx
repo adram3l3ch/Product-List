@@ -39,7 +39,7 @@ const Product = (props: ProductProps) => {
                 </div>
             ) : (
                 <button className={styles.cartButton} onClick={handleAddProductToCart}>
-                    <img src={addToCart} alt="add to cart" />
+                    <img src={addToCart} alt={"add to cart" + "_" + name} />
                     Add to cart
                 </button>
             )}
