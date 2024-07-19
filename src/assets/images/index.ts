@@ -13,3 +13,4 @@ export { default as decrement } from "./icon-decrement-quantity.svg";
 export { default as increment } from "./icon-increment-quantity.svg";
 export { default as tick } from "./icon-order-confirmed.svg";
 export { default as close } from "./icon-remove-item.svg";
+export { default as emptyCart } from "./illustration-empty-cart.svg";

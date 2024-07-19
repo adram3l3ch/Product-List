@@ -1,21 +1,51 @@
 import styles from "./styles.module.scss";
 import { ProductProps } from "./types";
-import cartIcon from "../../assets/images/icon-add-to-cart.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart, modifyProductQuantity } from "../../features";
+import { addToCart, decrement, increment } from "../../assets/images";
+import { RootState } from "../../store";
 
 const Product = (props: ProductProps) => {
-    const {
-        product: { image, name, price, category },
-    } = props;
+    const { product } = props;
+    const { image, name, price, category, id } = product;
+    const { products } = useSelector((state: RootState) => state.cart);
+
+    const dispatch = useDispatch();
+
+    const handleAddProductToCart = () => {
+        dispatch(addProductToCart(product));
+    };
+
+    const handleModifyQuantity = (by: -1 | 1) => {
+        dispatch(modifyProductQuantity({ id, by }));
+    };
+
+    const productInCart = products.find(p => p.id === id);
+
     return (
         <section className={styles.container}>
-            <img src={image} className={styles.image} />
-            <button className={styles.cartButton}>
-                <img src={cartIcon} />
-                Add to cart
-            </button>
+            <div className={styles.image} style={{ borderColor: !productInCart ? "transparent" : undefined }}>
+                <img src={image} />
+            </div>
+            {productInCart ? (
+                <div className={styles.modifyCartButton}>
+                    <button onClick={() => handleModifyQuantity(-1)}>
+                        <img src={decrement} />
+                    </button>
+                    <span>{productInCart.quantity}</span>
+                    <button onClick={() => handleModifyQuantity(1)} disabled={productInCart.quantity >= 20}>
+                        <img src={increment} />
+                    </button>
+                </div>
+            ) : (
+                <button className={styles.cartButton} onClick={handleAddProductToCart}>
+                    <img src={addToCart} />
+                    Add to cart
+                </button>
+            )}
             <h5 className={styles.category}>{category}</h5>
             <h5 className={styles.name}>{name}</h5>
-            <p className={styles.price}>${price}</p>
+            <p className={styles.price}>${price.toFixed(2)}</p>
         </section>
     );
 };

@@ -1,14 +1,14 @@
-import { carbonNeutral } from "../../assets/images";
+import { useSelector } from "react-redux";
+import { carbonNeutral, emptyCart as emptyCartImage } from "../../assets/images";
 import { CartItem } from "../CartItem";
 import styles from "./styles.module.scss";
-import { CartProps } from "./types";
+import { RootState } from "../../store";
 
-const Cart = ({ products }: CartProps) => {
-    const totalItems = products.reduce((acc, p) => acc + p.quantity, 0);
-    const totalPrice = products.reduce((acc, p) => acc + p.quantity * p.price, 0);
-    return (
-        <section className={styles.container}>
-            <h3 className={styles.title}>{`Your Cart (${totalItems})`}</h3>
+const Cart = () => {
+    const { products, totalItems, totalPrice } = useSelector((state: RootState) => state.cart);
+
+    const cartDetails = (
+        <>
             <div className={styles.productList}>
                 {products.map(p => (
                     <>
@@ -19,7 +19,7 @@ const Cart = ({ products }: CartProps) => {
             </div>
             <div className={styles.priceDetails}>
                 <div>Order Total</div>
-                <div className={styles.price}>${totalPrice}</div>
+                <div className={styles.price}>${totalPrice.toFixed(2)}</div>
             </div>
             <div className={styles.carbonFree}>
                 <img src={carbonNeutral} />
@@ -28,6 +28,20 @@ const Cart = ({ products }: CartProps) => {
                 </p>
             </div>
             <button className={styles.cta}>Confirm Order</button>
+        </>
+    );
+
+    const emptyCart = (
+        <div className={styles.empty}>
+            <img src={emptyCartImage} alt="empty cart" />
+            <p>Your added items will appear here</p>
+        </div>
+    );
+
+    return (
+        <section className={styles.container}>
+            <h3 className={styles.title}>{`Your Cart (${totalItems})`}</h3>
+            {totalItems ? cartDetails : emptyCart}
         </section>
     );
 };
